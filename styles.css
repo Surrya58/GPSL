@@ -50,12 +50,14 @@ nav ul li a {
     background: url('https://c4.wallpaperflare.com/wallpaper/307/345/278/scales-wallpaper-preview.jpg') no-repeat center center/cover;
     display: flex;
     background-size: 70% 500px;
+    background-color: #201f1f;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #fff;
     text-align: center;
     padding: 0 2rem;
+    padding-top: 10px;
     animation: fadeIn 2s ease-in-out;
 }
 
@@ -91,10 +93,14 @@ section {
 #about, #contact {
     text-align: center;
 }
+.sevrvices {
+    text-align: center;
+}
 
 .service-cards {
     display: flex;
     justify-content: center;
+    text-align: center;
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -363,6 +369,47 @@ body {
 /* Make paragraph visible in expanded state */
 .article-container.expanded p {
     display: block;
+}
+/* Base styles for navbar and hamburger icon */
+.navbar {
+    display: flex;
+}
+
+.hamburger {
+    display: none; /* Hide hamburger by default */
+    font-size: 30px; /* Adjust size as needed */
+    background: none;
+    border: none;
+    color: #fff; /* Match header color scheme */
+    cursor: pointer;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Hide navigation menu by default */
+        flex-direction: column;
+        width: 100%; /* Full width */
+        text-align: center;
+    }
+
+    .navbar ul {
+        width: 100%;
+    }
+
+    .navbar ul li {
+        display: block;
+    }
+
+    .navbar ul li a {
+        display: block;
+        padding: 10px;
+        border-top: 1px solid #ccc; /* Add a top border to each link */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger icon on small screens */
+    }
 }
 
 

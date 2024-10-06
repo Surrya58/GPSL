@@ -6,3 +6,14 @@ document.addEventListener("DOMContentLoaded", function() {
         modal.style.display = "none";
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    var hamburger = document.querySelector('.hamburger');
+    var navMenu = document.querySelector('.navbar');
+
+    hamburger.addEventListener('click', function () {
+        // Toggle class 'open' on navbar
+        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+});
+

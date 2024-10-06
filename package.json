@@ -1,0 +1,16 @@
+{
+  "name": "html-css-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "introduction.html",
+  "scripts": {
+    "start": "parcel introduction.html --open",
+    "build": "parcel build introduction.html"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "^1.6.1"
+  },
+  "keywords": []
+}
