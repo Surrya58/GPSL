@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), url('logo1.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+header {
+    background: #333;
+    background: rgb(0, 109, 91, 0.5);
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo h1 {
+    margin-bottom: 1rem;
+    animation: slideIn 2s ease;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    height: 100vh;
+    background: url('https://c4.wallpaperflare.com/wallpaper/307/345/278/scales-wallpaper-preview.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 2rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background: #f04;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-size: 1.25rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #c00;
+}
+
+section {
+    padding: 4rem 2rem;
+}
+
+#about, #contact {
+    text-align: center;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: #f4f4f4;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Existing styles omitted for brevity */
+
+/* Modal Styles */
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(39, 39, 38, 0.7);
+    z-index: 1100;
+}
+
+.modal-content {
+    background-color:#333535;
+    color: #f4f4f1;
+    padding: 2rem;
+    border-radius: 5px;
+    text-align: left;
+    width: 80%;
+    max-width: 600px;
+    animation: slideIn 0.5s ease;
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.modal-content ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-content .btn {
+    display: block;
+    margin: 0 auto;
+    background: #070707;
+    color: #f5f1f1;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-size: 1.25rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.modal-content .btn:hover {
+    background: #f3e16d;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+#partners {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+#partners h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.partner-card {
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+}
+
+.partner-card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.partner-card h3 {
+    font-size: 1.25rem;
+    margin: 1rem 0 0.5rem;
+    color: #333;
+}
+
+.partner-card .title {
+    color: #555;
+    font-weight: bold;
+}
+
+.partner-card .location {
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+.partner-card .links a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.partner-card .links a:hover {
+    text-decoration: underline;
+}
+
+.partner-card .links {
+    margin-bottom: 1rem;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+#about {
+    position: relative;
+    height: 400px; /* Adjust height as needed */
+    color: #fff;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.slideshow {
+    display: flex;
+    width: 500%; /* 5 images */
+    animation: slide 20s infinite; /* Adjust duration as needed */
+}
+
+.slideshow img {
+    width: 20%; /* Each image takes up 20% of the container width */
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); }
+    25% { transform: translateX(-20%); }
+    45% { transform: translateX(-20%); }
+    50% { transform: translateX(-40%); }
+    70% { transform: translateX(-40%); }
+    75% { transform: translateX(-60%); }
+    95% { transform: translateX(-60%); }
+    100% { transform: translateX(-80%); }
+}
+
+.about-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    width: 50%; /* Adjust as needed */
+    margin: 50px auto; /* Center the content */
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+/* Other existing styles omitted for brevity */
+a,p,#contact b,#contact h2 {
+    font-family: 'PetitFormalScript-Regular', cursive; /* Only headers use Allura */
+    font-weight: 500;
+    font-size: x-large;
+}
+h3,h2,#contact p,#contact li {
+   font-family: Georgia, serif;
+}
