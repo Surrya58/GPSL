@@ -1,416 +1,642 @@
-*
- {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
- a,p,h1,h2,h3,li {
-        font-family: "Cinzel";
-        font-weight: 400;
-        font-style: normal;
+a,
+p,
+h1,
+h2,
+h3,
+li {
+  font-family: "Cinzel";
+  font-weight: 400;
+  font-style: normal;
 }
-  
+
 header {
-    background: #006D5B;
-    height: fit-content;
-    padding: 0 0;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    display: flex; /* Using flex to layout logo and nav */
-    justify-content: space-between; /* Space between logo and navigation */
-    align-items: center; /* Align items vertically */
+  background: #006d5b;
+  height: fit-content;
+  padding: 0 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex; /* Using flex to layout logo and nav */
+  justify-content: space-between; /* Space between logo and navigation */
+  align-items: center; /* Align items vertically */
 }
 
 header .logo h1 {
-    margin-bottom: 0; /* Remove bottom margin */
-    animation: slideIn 2s ease;
+  margin-bottom: 0; /* Remove bottom margin */
+  animation: slideIn 2s ease;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end; /* Align nav items to the right */
-    gap: 2rem;
-    padding-right: 2rem; /* Padding to the right for spacing */
+  list-style: none;
+  display: flex;
+  justify-content: flex-end; /* Align nav items to the right */
+  gap: 2rem;
+  padding-right: 2rem; /* Padding to the right for spacing */
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bolder;
-    font-size: large;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: large;
 }
 
 .hero {
-    height: 100vh;
-    background: url('https://c4.wallpaperflare.com/wallpaper/307/345/278/scales-wallpaper-preview.jpg') no-repeat center center/cover;
-    display: flex;
-    background-size: 70% 500px;
-    background-color: #201f1f;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
-    padding: 0 2rem;
-    padding-top: 10px;
-    animation: fadeIn 2s ease-in-out;
+  height: 100vh;
+  background: url("https://media.istockphoto.com/id/538203075/photo/close-up-of-law-reports.jpg?s=612x612&w=0&k=20&c=7NGIN6ALrjNowsxUlb2q8jjSjCDp5MMcOul8XfC5Nx4=")
+    no-repeat center center/cover;
+  display: flex;
+  background-size: 70% 600px;
+  background-color: #201f1f;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #270101;
+  text-align: center;
+  padding: 0 2rem;
+  padding-top: 10px;
+  animation: fadeIn 2s ease-in-out;
 }
 
-.hero h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+.content-box {
+  background-color: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
+  border-radius: 8px; /* Optional: rounded corners */
+  padding: 1rem;
+  margin-top: 9rem;
+  width: 80%; /* Adjust width as needed */
+  max-width: 500px; /* Maximum width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: adds shadow for depth */
+  text-align: center; /* Center text within the box */
 }
 
 .btn {
-    display: inline-block;
-    background: #f04;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    font-size: 1.25rem;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+  background-color: #006D5B; /* Button background color */
+  color: white; /* Text color */
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px; /* Rounded button edges */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .hero {
+    background-color: transparent; /* Remove background color */
+    /* height: max-content; */
+    background-size: 100% 500px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+.btn {
+  display: inline-block;
+  background: rgb(113, 110, 111);
+  color: #270101;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
 .btn:hover {
-    background: #c00;
+  background: #c00;
 }
 
 section {
-    padding: 4rem 2rem;
+  padding: 4rem 2rem;
 }
 
-#about, #contact {
-    text-align: center;
+#about,
+#contact {
+  text-align: center;
 }
 .sevrvices {
-    text-align: center;
+  text-align: center;
+}
+
+.services__header {
+  text-align: center;
 }
 
 .service-cards {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    gap: 2rem;
-    margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .card {
-    background: #f4f4f4;
-    padding: 2rem;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
-    transition: transform 0.5s ease;
+  background: #e6e5e5;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.5s ease;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 125px; /* Slightly smaller width for medium screens */
+    padding: 1.5rem; /* Slightly reduced padding */
+    font-size: x-small;
+  }
+
+  .service-cards {
+    gap: 1rem;
+  }
 }
 
 .card:hover {
-    transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
 footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 @keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 /* Existing styles omitted for brevity */
 
 /* Modal Styles */
 .modal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(39, 39, 38, 0.7);
-    z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(39, 39, 38, 0.7);
+  z-index: 1100;
 }
 
 .modal-content {
-    background-color:#333535;
-    color: #f4f4f1;
-    padding: 2rem;
-    border-radius: 5px;
-    text-align: left;
-    width: 80%;
-    max-width: 600px;
-    animation: slideIn 0.5s ease;
-    font-size: small;
+  background-color: #333535;
+  color: #f4f4f1;
+  padding: 2rem;
+  border-radius: 5px;
+  text-align: left;
+  width: 80%;
+  max-width: 600px;
+  animation: slideIn 0.5s ease;
+  font-size: small;
 }
 
 .modal-content h2 {
-    text-align: center;
-    margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .modal-content ul {
-    list-style: disc;
-    padding-left: 1.5rem;
-    margin-bottom: 1.5rem;
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .modal-content .btn {
-    display: block;
-    margin: 0 auto;
-    background: #070707;
-    color: #f5f1f1;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    font-size: 1.25rem;
-    border-radius: 5px;
-    transition:background 0.5s ease;
+  display: block;
+  margin: 0 auto;
+  background: #070707;
+  color: #f5f1f1;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  transition: background 0.5s ease;
 }
 
 .modal-content .btn:hover {
-    background: #f3e16d;
+  background: #f3e16d;
 }
 
 @keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-50%);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0.5%;
 }
 
 #partners {
-    text-align: center;
-    padding: 2rem 1rem;
+  text-align: center;
+  padding: 2rem 1rem;
 }
 
 #partners h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    position: relative;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
 .partners-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .partner-card {
-    background: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 200px;
-    text-align: center;
+  background: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 200px;
+  text-align: center;
+}
+
+/* Media Query for smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+  #partners {
+    display: none;
+  }
 }
 
 .partner-card img {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
 }
 
 .partner-card h3 {
-    font-size: 1.25rem;
-    margin: 1rem 0 0.5rem;
-    color: #333;
+  font-size: 1.25rem;
+  margin: 1rem 0 0.5rem;
+  color: #333;
 }
 
 .partner-card .title {
-    color: #555;
-    font-weight: bold;
+  color: #555;
+  font-weight: bold;
 }
 
 .partner-card .location {
-    color: #777;
-    margin-bottom: 1rem;
+  color: #777;
+  margin-bottom: 1rem;
 }
 
 .partner-card .links a {
-    color: #0066cc;
-    text-decoration: none;
-    font-weight: bold;
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .partner-card .links a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .partner-card .links {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
+
+/* glider css start */
+
+@media (min-width: 768px) {
+  .glider-contain {
+    display: none;
+  }
+}
+
+.glider-contain {
+  position: relative;
+  width: 90%;
+  margin: auto;
+}
+
+.glider img {
+  width: 100%;
+  display: block; /* Remove extra space below images */
+}
+
+.glider-prev,
+.glider-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #eee;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.glider-prev {
+  left: 10px;
+}
+
+.glider-next {
+  right: 10px;
+}
+
+/* glider css end */
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
 #about {
-    position: relative;
-    height: 400px; /* Adjust height as needed */
-    color: #fff;
-    overflow: hidden;
+  position: relative;
+  height: 400px; /* Adjust height as needed */
+  color: #fff;
+  overflow: hidden;
 }
 
 .slideshow-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200%;
-    z-index: 1;
-    overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600%;
+  z-index: 1;
+  overflow: hidden;
+}
+/* Container for the slideshow */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+  height: 600px;  /* Adjust based on your image height */
+}
+
+/* Individual slide styling */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 100%;  /* Start offscreen */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  transition: left 0.5s ease-in-out; /* Smooth transition for sliding effect */
+}
+
+/* Display the active slide */
+.active {
+  left: 0;  /* Bring the active slide into view */
+}
+
+/* Styling for text inside slides for better visibility */
+.slide h2, .slide p {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  width: 100%; /* Full width of the slide for better legibility */
 }
 
 .slideshow {
-    display: flex;
-    width: 500%; /* 5 images */
-    animation: slide 20s infinite; /* Adjust duration as needed */
+  display: flex;
+  width: 500%; /* 5 images */
+  animation: slide 20s infinite; /* Adjust duration as needed */
 }
 
 .slideshow img {
-    width: 20%; /* Each image takes up 20% of the container width */
-    height: 100%;
-    object-fit: cover;
+  width: 100%; /* Each image takes up 20% of the container width */
+  height: 100%;
+  object-fit: cover;
+}
+@keyframes slide {
+  0%, 20% {
+    transform: translateX(0);
+  }
+  20%, 40% {
+    transform: translateX(-20%);
+  }
+  40%, 60% {
+    transform: translateX(-40%);
+  }
+  60%, 80% {
+    transform: translateX(-60%);
+  }
+  80%, 100% {
+    transform: translateX(-80%);
+  }
 }
 
-@keyframes slide {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(0); }
-    25% { transform: translateX(-20%); }
-    45% { transform: translateX(-20%); }
-    50% { transform: translateX(-40%); }
-    70% { transform: translateX(-40%); }
-    75% { transform: translateX(-60%); }
-    95% { transform: translateX(-60%); }
-    100% { transform: translateX(-80%); }
-}
 
 .about-content {
-    position: relative;
-    z-index: 2;
-    padding: 2rem;
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    width: 50%; /* Adjust as needed */
-    margin: 50px auto; /* Center the content */
-    border-radius: 10px;
-    text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  width: 50%; /* Adjust as needed */
+  margin: 50px auto; /* Center the content */
+  border-radius: 10px;
+  text-align: center;
 }
-
 
 /* Other existing styles omitted for brevity */
 /* General styles for article containers */
 .article-container {
-    width: 90%;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    cursor: pointer;
-    transition: all 0.5s ease;
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
 /* Hidden by default; shown only when expanded */
 .article-container p {
-    display: none;
-    color: #333;
+  display: none;
+  color: #333;
 }
 
 /* Expanded state styles */
 .article-container.expanded {
-    padding: 40px;
-    background-color: #e4e4e4;
+  padding: 40px;
+  background-color: #e4e4e4;
 }
 
 /* Make paragraph visible in expanded state */
 .article-container.expanded p {
-    display: block;
+  display: block;
 }
 /* Base styles for navbar and hamburger icon */
 .navbar {
-    display: flex;
+  display: flex;
 }
 
 .hamburger {
-    display: none; /* Hide hamburger by default */
-    font-size: 30px; /* Adjust size as needed */
-    background: none;
-    border: none;
-    color: #fff; /* Match header color scheme */
-    cursor: pointer;
+  display: none; /* Hide hamburger by default */
+  font-size: 30px; /* Adjust size as needed */
+  background: none;
+  border: none;
+  color: #fff; /* Match header color scheme */
+  cursor: pointer;
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
-    .navbar {
-        display: none; /* Hide navigation menu by default */
-        flex-direction: column;
-        width: 100%; /* Full width */
-        text-align: center;
-    }
+  .navbar {
+    display: none; /* Hide navigation menu by default */
+    flex-direction: column;
+    width: 100%; /* Full width */
+    text-align: center;
+  }
 
-    .navbar ul {
-        width: 100%;
-    }
+  .navbar ul {
+    width: 100%;
+  }
 
-    .navbar ul li {
-        display: block;
-    }
+  .navbar ul li {
+    display: block;
+  }
 
-    .navbar ul li a {
-        display: block;
-        padding: 10px;
-        border-top: 1px solid #ccc; /* Add a top border to each link */
-    }
+  .navbar ul li a {
+    display: block;
+    padding: 10px;
+    border-top: 1px solid #ccc; /* Add a top border to each link */
+  }
 
-    .hamburger {
-        display: block; /* Show hamburger icon on small screens */
-    }
+  .hamburger {
+    display: block; /* Show hamburger icon on small screens */
+  }
+}
+/* styles.css */
+/* Container for the slideshow with blurred background */
+.slideshow-container {
+  position: relative;
+  width: 100%; /* Full width */
+  max-width: 800px; /* Maximum width */
+  margin: 20px auto;
+  overflow: hidden; /* Ensures the background doesn't exceed the boundaries */
+  background: #fff; /* Fallback color */
+}
+
+/* Pseudo-element for blurred background */
+.slideshow-container::before {
+  content: "";
+  position: absolute;
+  top: 0.5%;
+  left: 0.5%;
+  right:  0.5%;
+  bottom:  0.5%;
+  background: url('slide1.jpeg') no-repeat center center / cover; /* Adjust the path accordingly */
+  filter: blur(8px); /* Blur effect */
+  z-index: -1; /* Ensure it stays behind the content */
+}
+
+/* Slideshow images */
+.slideshow img {
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the area without stretching */
+}
+
+/* Responsive adjustments for smaller devices */
+@media (max-width: 768px) {
+  .slideshow img {
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Maintain aspect ratio */
+      object-fit: contain; /* Ensure the whole image is visible on smaller screens */
+  }
 }
 
 
+/* Slides styling */
+.slide {
+  display: none; /* Hide slides by default */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Active slide */
+.active {
+  display: block; /* Show active slide */
+}
+
+/* Navigation buttons styling */
+button.prev, button.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Align buttons vertically centered */
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 3px;
+  user-select: none;
+  background-color: rgba(0,0,0,0.8);
+}
+
+button.next {
+  right: 10px; /* Position to the right */
+}
+
+button.prev {
+  left: 10px; /* Position to the left */
+}
 

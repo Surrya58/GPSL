@@ -8,6 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.css">
+
+
 </head>
 <body>
     <!-- Disclaimer Modal -->
@@ -37,23 +40,21 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
+                <li><a href="aboutourteam.html">About Our Team</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="Blog.html">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
-    
-    
 
     <section id="home" class="hero">
-        <h2>Your Trusted Legal Partner</h2>
-        <p>Professional and dedicated legal services for all your needs.</p>
+    <div class="content-box">
+        <h2><b>Your Trusted Legal Partner</b></h2>
+        <p><b>Professional and dedicated legal services for all your needs.</b></p>
         <a href="#services" class="btn">Our Services</a>
-    </section>
-
-
-
+    </div>
+</section>
 
 <head>
     <meta charset="UTF-8">
@@ -66,21 +67,19 @@
     <section id="about">
         <div class="slideshow-container">
             <div class="slideshow">
-                <img src="I1.jpg" alt="Image 1">
-                <img src="I2.jpg" alt="Image 2">
-                <img src="I3.jpg" alt="Image 3">
-                <img src="I4.jpg" alt="Image 4">
-                <img src="I5.jpg" alt="Image 5">
+                <img src="slide1.jpeg" alt="Image 1">
+                <img src="slide2.jpeg" alt="Image 2">
+                <img src="slide3.jpg" alt="Image 3">
+                <img src="slid4.jpg" alt="Image 4">
+                <img src="slide5.jpg" alt="Image 5">
             </div>
-        </div>
-        <div class="about-content">
-            <h2>About Us</h2>
-            <p>GPS Legal is a leading law firm specializing in various fields of law, including CIVIL LAW, LABOR LAW, CORPORATE LAW, CRIMINAL LAW &  FAMILY LAW.  Our team of experienced lawyers is dedicated to providing personalized legal solutions to our clients.</p>
-        </div>
+        <button class="left-arrow">Left</button>
+        <button class="right-arrow">Right</button>
+      </div>   
     </section>
 
     <section id="services">
-        <h2>Our Services</h2>
+        <h2 class="services__header">Our Services</h2>
         <div class="service-cards">
             <div class="card">
                 <h3>Civil Law</h3>
@@ -94,6 +93,9 @@
                 <h3>Criminal Law</h3>
                 <p>Strong defense strategies for criminal cases.</p>
             </div>
+         </div>
+
+         <div class="service-cards">
             <div class="card">
                 <h3>Family Law</h3>
                 <p>Expert advice and representation in Family disputes.</p>
@@ -102,7 +104,7 @@
                 <h3>Labor Law</h3>
                 <p>Expert guidance on labor law compliance and employee rights.</p>
             </div>
-                </div>
+         </div>
     </section>
     <section>
         <html lang="en">
@@ -136,6 +138,33 @@
                     </div>
                 </div>
             </section>
+
+            <div class="glider-contain">
+                <div class="glider">
+                    <div class="partner-card">
+                        <img src="sarthak img.jpg" alt="Sarthak Godiyal">
+                        <h3>Sarthak Godiyal</h3>
+                        <p class="title">BBA.LLB</p>
+                        <p class="links"><a href="mailto:sarthak@gpslegal.in;info@gpslegal.in">Email</a></p>
+                    </div>
+                    <div class="partner-card">
+                        <img src="sonal image.jpg" alt="Vaibhavi Perugu">
+                        <h3>Vaibhavi Perugu</h3>
+                        <p class="title">BA.LLB. LLM (criminal & securities law)</p>
+                        <p class="link"><a href="mailto:vaibhavi@gpslegal.in;info@gpslegal.in">Email</a></p>
+                    </div>
+                    <div class="partner-card"> 
+                        <img src="ANJUPP.jpg" alt="Anju Sankar">
+                        <h3>Anju Sankar</h3>
+                        <p class="title">BSc. MBA. LLB</p>
+                        <p class="link"><a href="mailto:anju@gpslegal.in;info@gpslegal.in">Email</a></p>
+                    </div>
+                </div>
+                <button aria-label="Previous" class="glider-prev">«</button>
+                <button aria-label="Next" class="glider-next">»</button>
+                <div role="tablist" class="dots"></div>
+            </div>
+            
         </body>
         </html>
         </section>
@@ -157,6 +186,21 @@
         <p>&copy; 2024 GPS Legal. All Rights Reserved.</p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            new Glider(document.querySelector('.glider'), {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                draggable: true,
+                dots: '.dots',
+                arrows: {
+                    prev: '.glider-prev',
+                    next: '.glider-next'
+                }
+            });
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
