@@ -67,7 +67,12 @@ nav ul li a {
 }
 
 .content-box {
-  background-color: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* White background with 50% opacity */
   border-radius: 8px; /* Optional: rounded corners */
   padding: 1rem;
   margin-top: 9rem;
@@ -78,14 +83,13 @@ nav ul li a {
 }
 
 .btn {
-  background-color: #006D5B; /* Button background color */
+  background-color: #006d5b; /* Button background color */
   color: white; /* Text color */
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 5px; /* Rounded button edges */
   transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
-
 
 .hero h2 {
   font-size: 3rem;
@@ -136,6 +140,7 @@ section {
 #about,
 #contact {
   text-align: center;
+  font-size: smaller;
 }
 .sevrvices {
   text-align: center;
@@ -229,11 +234,39 @@ footer {
   color: #f4f4f1;
   padding: 2rem;
   border-radius: 5px;
-  text-align: left;
+  text-align: center;
   width: 80%;
   max-width: 600px;
   animation: slideIn 0.5s ease;
   font-size: small;
+}
+.modal {
+  display: none; /* Start hidden and only show when needed */
+  position: fixed; /* Stay in place even when scrolling */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.4); /* Dim the background */
+  z-index: 1050; /* Ensure it's on top of other content */
+}
+
+.modal-content {
+  background-color: #333535;
+  margin: 15% auto; /* 15% from the top and centered horizontally */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* You can adjust this for different sizes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Optional: Responsive adjustments */
+@media (max-width: 600px) {
+  .modal-content {
+    width: 90%; /* Smaller devices have a wider modal */
+    margin: 20% auto; /* Increase top margin on smaller devices */
+  }
 }
 
 .modal-content h2 {
@@ -420,14 +453,14 @@ body {
   max-width: 800px;
   margin: auto;
   overflow: hidden;
-  height: 600px;  /* Adjust based on your image height */
+  height: 600px; /* Adjust based on your image height */
 }
 
 /* Individual slide styling */
 .slide {
   position: absolute;
   top: 0;
-  left: 100%;  /* Start offscreen */
+  left: 100%; /* Start offscreen */
   width: 100%;
   height: 100%;
   display: flex;
@@ -442,11 +475,12 @@ body {
 
 /* Display the active slide */
 .active {
-  left: 0;  /* Bring the active slide into view */
+  left: 0; /* Bring the active slide into view */
 }
 
 /* Styling for text inside slides for better visibility */
-.slide h2, .slide p {
+.slide h2,
+.slide p {
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
@@ -465,23 +499,27 @@ body {
   object-fit: cover;
 }
 @keyframes slide {
-  0%, 20% {
+  0%,
+  20% {
     transform: translateX(0);
   }
-  20%, 40% {
+  20%,
+  40% {
     transform: translateX(-20%);
   }
-  40%, 60% {
+  40%,
+  60% {
     transform: translateX(-40%);
   }
-  60%, 80% {
+  60%,
+  80% {
     transform: translateX(-60%);
   }
-  80%, 100% {
+  80%,
+  100% {
     transform: translateX(-80%);
   }
 }
-
 
 .about-content {
   position: relative;
@@ -523,120 +561,189 @@ body {
   display: block;
 }
 /* Base styles for navbar and hamburger icon */
-.navbar {
+/* Hamburger Menu Styles */
+/* Basic styling for desktop first - No hamburger, white link colors */
+.header {
+  background-color: #006d5b; /* Dark green background */
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.navbar {
+  display: flex; /* Default display */
+  width: 100%; /* Full width */
+  justify-content: center; /* Center items for desktop */
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex; /* Horizontal list for desktop */
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li {
+  padding: 10px 20px; /* Larger padding for desktop */
+}
+
+.navbar ul li a {
+  color: white; /* White text for desktop */
+  text-decoration: none;
+  font-size: 16px; /* Appropriate size for desktop */
+}
+
+/* Hamburger menu - only visible in mobile view */
 .hamburger {
-  display: none; /* Hide hamburger by default */
-  font-size: 30px; /* Adjust size as needed */
+  display: none; /* Hidden on desktop */
+  font-size: 30px; /* Larger icon size for visibility on mobile */
   background: none;
+  color: white;
+  padding: 15px;
   border: none;
-  color: #fff; /* Match header color scheme */
   cursor: pointer;
 }
 
-/* Media Queries */
+/* Media Query for Mobile Devices */
 @media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger on mobile */
+  }
+
   .navbar {
-    display: none; /* Hide navigation menu by default */
-    flex-direction: column;
-    width: 100%; /* Full width */
-    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-color: rgba(220, 226, 223, 0.95); /* Light background */
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    z-index: 50;
+    overflow-y: auto; /* Allow scrolling */
+  }
+
+  .navbar.expanded {
+    display: flex; /* Display when expanded */
   }
 
   .navbar ul {
-    width: 100%;
-  }
-
-  .navbar ul li {
-    display: block;
+    flex-direction: column; /* Stack links vertically on mobile */
   }
 
   .navbar ul li a {
-    display: block;
-    padding: 10px;
-    border-top: 1px solid #ccc; /* Add a top border to each link */
-  }
-
-  .hamburger {
-    display: block; /* Show hamburger icon on small screens */
+    color: black; /* Black text for readability on light background */
+    font-size: 20px; /* Larger font size for mobile */
   }
 }
-/* styles.css */
-/* Container for the slideshow with blurred background */
+
 .slideshow-container {
   position: relative;
-  width: 100%; /* Full width */
-  max-width: 800px; /* Maximum width */
-  margin: 20px auto;
-  overflow: hidden; /* Ensures the background doesn't exceed the boundaries */
-  background: #fff; /* Fallback color */
+  width: 100%; /* Use full width to better control dimensions */
+  height: 300px; /* Fixed height to create a more landscape-oriented rectangle */
+  margin: auto;
+  overflow: hidden;
+  background-color: rgb(
+    255,
+    255,
+    255
+  ); /* Optional, depending on your design needs */
 }
 
-/* Pseudo-element for blurred background */
-.slideshow-container::before {
-  content: "";
+.slideshow img:first-child {
+  display: block; /* Show the first image by default */
+}
+
+.left-arrow,
+.right-arrow {
   position: absolute;
-  top: 0.5%;
-  left: 0.5%;
-  right:  0.5%;
-  bottom:  0.5%;
-  background: url('slide1.jpeg') no-repeat center center / cover; /* Adjust the path accordingly */
-  filter: blur(8px); /* Blur effect */
-  z-index: -1; /* Ensure it stays behind the content */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  padding: 16px;
+  color: rgb(0, 0, 0);
+  background: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Semi-transparent background for better visibility */
+  border: none;
 }
 
-/* Slideshow images */
-.slideshow img {
-  width: 100%; /* Full width of the container */
-  height: 100%; /* Maintain aspect ratio */
-  object-fit: cover; /* Cover the area without stretching */
+.left-arrow {
+  left: 10px; /* Distance from left edge */
 }
 
-/* Responsive adjustments for smaller devices */
-@media (max-width: 768px) {
-  .slideshow img {
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Maintain aspect ratio */
-      object-fit: contain; /* Ensure the whole image is visible on smaller screens */
-  }
+.right-arrow {
+  right: 10px; /* Distance from right edge */
 }
 
-
-/* Slides styling */
-.slide {
-  display: none; /* Hide slides by default */
-  padding: 20px;
+.dots {
+  position: absolute;
+  bottom: 10px; /* Positioned at the bottom of the slideshow container */
+  width: 100%;
   text-align: center;
 }
 
-/* Active slide */
-.active {
-  display: block; /* Show active slide */
-}
-
-/* Navigation buttons styling */
-button.prev, button.next {
+.dot {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
   cursor: pointer;
+}
+
+/* Text container with translucent background */
+.text-container {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%); /* Align buttons vertically centered */
-  width: auto;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  border-radius: 3px;
-  user-select: none;
-  background-color: rgba(0,0,0,0.8);
+  bottom: 35px; /* Position above the dots */
+  width: 100%;
+  text-align: center;
+  background: rgb(255, 255, 255); /* Translucent gray background */
+  color: rgb(0, 0, 0);
+  padding: 10px 0;
+  font-size: 18px; /* Adjustable based on design preference */
+}
+.slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure images cover the container */
+  height: 100%; /* Match container height */
+  object-fit: cover; /* Ensures image covers the area without distorting aspect ratio */
+  display: block; /* Change to block to ensure it's visible by default */
+  visibility: hidden; /* Use visibility to hide elements instead of display */
 }
 
-button.next {
-  right: 10px; /* Position to the right */
+.slideshow img:first-child {
+  visibility: visible; /* Ensure the first image is visible */
+}
+.slideshow img {
+  width: 80%; /* Sets the width of the images to 80% of their container */
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Offset the position to truly center based on top left */
+  display: none; /* Hide images by default */
+  object-fit: cover; /* Ensures the image covers the assigned area without distortion */
 }
 
-button.prev {
-  left: 10px; /* Position to the left */
+.slideshow img:first-child {
+  display: block; /* Show the first image by default */
 }
-
+@media (max-width: 768px) {
+  .slideshow img {
+    width: 100%; /* Full width on smaller screens */
+  }
+}
