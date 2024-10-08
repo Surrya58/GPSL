@@ -436,63 +436,10 @@ body {
   color: #fff;
   overflow: hidden;
 }
-.slideshow-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 600%;
-  z-index: 1;
-  overflow: hidden;
-}
-/* Container for the slideshow */
-.slideshow-container {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
-  overflow: hidden;
-  height: 600px; /* Adjust based on your image height */
-}
-
 /* Display the active slide */
 .active {
   left: 0; /* Bring the active slide into view */
 }
-
-/* Styling for text inside slides for better visibility */
-.slide h2,
-.slide p {
-  display: block;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  width: 100%; /* Full width of the slide for better legibility */
-}
-
-.slideshow {
-  display: flex;
-  width: 500%; /* 5 images */
-  animation: slide 20s infinite; /* Adjust duration as needed */
-}
-
-.slideshow img {
-  width: 100%; /* Each image takes up 20% of the container width */
-  height: 100%;
-  object-fit: cover;
-}
-
-.about-content {
-  position: relative;
-  z-index: 2;
-  padding: 2rem;
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-  width: 50%; /* Adjust as needed */
-  margin: 50px auto; /* Center the content */
-  border-radius: 10px;
-  text-align: center;
-}
-
 /* Other existing styles omitted for brevity */
 /* General styles for article containers */
 .article-container {
@@ -610,29 +557,46 @@ body {
   box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, sans-serif; /* Ensures consistent font usage */
+}
+
 .slideshow-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+  position: relative; /* Keeps the slideshow positioned relative to its normal position */
+  width: 100%; /* Full width of the container */
+  height: 500px; /* Fixed height */
+  margin: auto; /* Centers the slideshow if there's a specified width less than the screen size */
+  overflow: hidden; /* Prevents slides from displaying outside the container */
 }
 
 .slide {
-  display: none;
-  width: 100%;
-  height: 500px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
+  display: none; /* Hide all slides by default */
+  position: absolute; /* Absolute position to allow stacking on top of each other */
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+  background-size: cover; /* Cover the whole slide area with the image */
+  background-position: center; /* Center the background image */
 }
 
-.text-container {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 10px;
-  text-align: center;
+.content-box {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* White background with 50% opacity */
+  border-radius: 8px; /* Optional: rounded corners */
+  padding: 1rem;
+  margin-top: 9rem;
+  width: 80%; /* Adjust width as needed */
+  max-width: 500px; /* Maximum width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: adds shadow for depth */
+  text-align: center; /* Center text within the box */
+}
+
+/* Display the first slide by default to start the slideshow */
+.slideshow .slide:first-child {
+  display: block;
 }
 
 .control {
