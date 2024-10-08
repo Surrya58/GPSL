@@ -642,108 +642,95 @@ body {
   }
 }
 
+/* Slideshow and Slide configurations */
 .slideshow-container {
   position: relative;
-  width: 100%; /* Use full width to better control dimensions */
-  height: 300px; /* Fixed height to create a more landscape-oriented rectangle */
+  width: 100%; /* Full width to ensure responsiveness */
+  height: 400px; /* Adjust based on desired slide height */
   margin: auto;
   overflow: hidden;
-  background-color: rgb(
-    255,
-    255,
-    255
-  ); /* Optional, depending on your design needs */
 }
 
-.slideshow img:first-child {
-  display: block; /* Show the first image by default */
+.slideshow .slide {
+  width: 100%; /* Each slide fills the container */
+  height: 100%; /* Fixed height for consistent display */
+  background-size: cover; /* Cover ensures the image covers the slide area */
+  background-position: center; /* Centers the background image */
+  display: none; /* Hide all slides by default */
+  position: relative; /* Needed for positioning text container inside it */
 }
 
-.left-arrow,
-.right-arrow {
+/* Specific backgrounds for each slide via CSS */
+.slideshow .slide:nth-child(1) {
+  background-image: url("slide1.jpeg");
+}
+.slideshow .slide:nth-child(2) {
+  width: 100px;
+  height: auto;
+  background-image: url("slide2.jpeg");
+}
+.slideshow .slide:nth-child(3) {
+  background-image: url("slide3.jpg");
+}
+.slideshow .slide:nth-child(4) {
+  background-image: url("slid4.jpg");
+}
+.slideshow .slide:nth-child(5) {
+  background-image: url("slide5.jpg");
+}
+
+/* Text Container styling */
+.text-container {
+  position: absolute;
+  bottom: 10%; /* Positioned at the bottom of the slide */
+  width: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* Translucent background for text */
+  color: white;
+  padding: 10px 0;
+  font-size: 1.5em;
+}
+
+/* Show the first slide by default */
+.slideshow .slide:first-child {
+  display: block;
+}
+
+.control {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  z-index: 1000;
+  color: white;
+  font-size: 2em;
   cursor: pointer;
-  padding: 16px;
-  color: rgb(0, 0, 0);
-  background: rgba(
-    255,
-    255,
-    255,
-    0.5
-  ); /* Semi-transparent background for better visibility */
+  background: none;
   border: none;
 }
 
-.left-arrow {
-  left: 10px; /* Distance from left edge */
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
 }
 
-.right-arrow {
-  right: 10px; /* Distance from right edge */
-}
-
-.dots {
+.dots-container {
   position: absolute;
-  bottom: 10px; /* Positioned at the bottom of the slideshow container */
+  bottom: 10px;
   width: 100%;
   text-align: center;
 }
 
 .dot {
-  display: inline-block;
-  height: 10px;
-  width: 10px;
-  margin: 0 5px;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
   background-color: #bbb;
   border-radius: 50%;
-  cursor: pointer;
+  display: inline-block;
 }
 
-/* Text container with translucent background */
-.text-container {
-  position: absolute;
-  bottom: 35px; /* Position above the dots */
-  width: 100%;
-  text-align: center;
-  background: rgb(255, 255, 255); /* Translucent gray background */
-  color: rgb(0, 0, 0);
-  padding: 10px 0;
-  font-size: 18px; /* Adjustable based on design preference */
-}
-.slideshow img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%; /* Ensure images cover the container */
-  height: 100%; /* Match container height */
-  object-fit: cover; /* Ensures image covers the area without distorting aspect ratio */
-  display: block; /* Change to block to ensure it's visible by default */
-  visibility: hidden; /* Use visibility to hide elements instead of display */
-}
-
-.slideshow img:first-child {
-  visibility: visible; /* Ensure the first image is visible */
-}
-.slideshow img {
-  width: 80%; /* Sets the width of the images to 80% of their container */
-  position: absolute;
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Offset the position to truly center based on top left */
-  display: none; /* Hide images by default */
-  object-fit: cover; /* Ensures the image covers the assigned area without distortion */
-}
-
-.slideshow img:first-child {
-  display: block; /* Show the first image by default */
-}
-@media (max-width: 768px) {
-  .slideshow img {
-    width: 100%; /* Full width on smaller screens */
-  }
+.dot.active {
+  background-color: #717171;
 }

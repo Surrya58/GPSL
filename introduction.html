@@ -66,30 +66,49 @@
 </head>
 <body>
     <!-- About Us Section with Background Slider -->
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slideshow Example</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="slideshow-container">
-        <div class="slideshow">
-            <img src="slide1.jpeg" alt="Image 1">
-    <img src="slide2.jpeg" alt="Image 2">
-    <img src="slide3.jpg" alt="Image 3">
-    <img src="slid4.jpg" alt="Image 4">
-    <img src="slide5.jpg" alt="Image 5">
+  
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Slideshow Example</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="slideshow-container">
+            <!-- Slideshow with individual text containers for each slide -->
+            <div class="slideshow">
+                <div class="slide" style="background-image:url('slide1.jpeg');">
+                    <div class="text-container">Text for Slide 1</div>
+                </div>
+                <div class="slide" style="background-image:url('slide2.jpeg');">
+                    <div class="text-container">Text for Slide 2</div>
+                </div>
+                <div class="slide" style="background-image:url('slide3.jpg');">
+                    <div class="text-container">Text for Slide 3</div>
+                </div>
+                <div class="slide" style="background-image:url('slid4.jpg');">
+                    <div class="text-container">Text for Slide 4</div>
+                </div>
+                <div class="slide" style="background-image:url('slide5.jpg');">
+                    <div class="text-container">Text for Slide 5</div>
+                </div>
+            </div>
+            <!-- Navigation Controls -->
+            <button class="control prev">❮</button>
+            <button class="control next">❯</button>
+            <!-- Dots Indicator -->
+            <div class="dots-container">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
         </div>
-        <button class="left-arrow">Left</button>
-        <button class="right-arrow">Right</button>
-        <div class="dots"></div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+        <script src="script.js"></script>
+    </body>
+    </html>
+    
 
 
     <section id="services">
