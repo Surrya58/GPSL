@@ -46,74 +46,73 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 document.addEventListener("DOMContentLoaded", function () {
-  const slides = document.querySelectorAll(".slideshow .slide");
+  const slides = document.querySelectorAll(".slide");
   const nextButton = document.querySelector(".next");
   const prevButton = document.querySelector(".prev");
   const dots = document.querySelectorAll(".dot");
   let currentSlide = 0;
-  let slideInterval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
 
   function showSlide(index) {
     slides.forEach((slide, idx) => {
-      slide.style.display = "none"; // Hide all slides
-      dots[idx].classList.remove("active"); // Deactivate all dots
+      slide.style.display = "none";
+      dots[idx].classList.remove("active");
     });
-    slides[index].style.display = "block"; // Show current slide
-    dots[index].classList.add("active"); // Activate the dot
+    slides[index].style.display = "block";
+    dots[index].classList.add("active");
   }
 
   function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length; // Move to the next slide
+    currentSlide = (currentSlide + 1) % slides.length;
     showSlide(currentSlide);
   }
 
   function prevSlide() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Move to the previous slide
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
     showSlide(currentSlide);
   }
 
-  nextButton.addEventListener("click", function () {
+  nextButton.onclick = function () {
     nextSlide();
-    resetInterval();
-  });
+  };
 
-  prevButton.addEventListener("click", function () {
+  prevButton.onclick = function () {
     prevSlide();
-    resetInterval();
-  });
+  };
 
   dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
+    dot.onclick = function () {
       currentSlide = i;
       showSlide(currentSlide);
-      resetInterval();
-    });
+    };
   });
 
-  // Play/Pause functionality
-  let playing = true;
-  let pauseButton = document.createElement("button");
-  pauseButton.textContent = playing ? "Pause" : "Play";
-  pauseButton.className = "pause";
-  document.querySelector(".slideshow-container").appendChild(pauseButton);
-
-  pauseButton.addEventListener("click", function () {
-    if (playing) {
-      clearInterval(slideInterval);
-      pauseButton.textContent = "Play";
-    } else {
-      slideInterval = setInterval(nextSlide, 3000);
-      pauseButton.textContent = "Pause";
-    }
-    playing = !playing;
-  });
-
-  function resetInterval() {
-    clearInterval(slideInterval);
-    if (playing) {
-      slideInterval = setInterval(nextSlide, 3000);
-    }
-  }
-
-  showSlide(currentSlide); // Initialize the slideshow
+  // Initialize the first slide
+  showSlide(currentSlide);
 });
+
+// Play/Pause functionality
+let playing = true;
+let pauseButton = document.createElement("button");
+pauseButton.textContent = playing ? "Pause" : "Play";
+pauseButton.className = "pause";
+document.querySelector(".slideshow-container").appendChild(pauseButton);
+
+pauseButton.addEventListener("click", function () {
+  if (playing) {
+    clearInterval(slideInterval);
+    pauseButton.textContent = "Play";
+  } else {
+    slideInterval = setInterval(nextSlide, 3000);
+    pauseButton.textContent = "Pause";
+  }
+  playing = !playing;
+});
+
+function resetInterval() {
+  clearInterval(slideInterval);
+  if (playing) {
+    slideInterval = setInterval(nextSlide, 3000);
+  }
+}
+
+showSlide(currentSlide); // Initialize the slideshow
